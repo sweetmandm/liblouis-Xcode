@@ -1,0 +1,5 @@
+This is an Xcode-ready fork of [liblouis](https://github.com/liblouis/liblouis). 
+I created this fork because the default liblouis project needed a few small changes to be built in Xcode as a static library or included as an .xcodeproj.  
+The only significant change needed was that several items in 'typeform' enum in liblouis.h conflicted with items in MacTypes.h. This also includes an Xcode project that already has the relevant environment variables defined as preprocessor macros, and should be ready to use in other Xcode projects.
+
+**NOTE:** liblouis is under continual development and this fork does not closely track any changes. I've only published this to document my process of building, because it took me a few hours to successfully build in Xcode. The git history has been kept as clean as possible (my changes start at commit afe09ce57) so it should be easy to see what I did. If you're using liblouis for any purposes beyond just getting acquaited with it and seeing what it can do, you should pull from the master git repo and make any necessary changes yourself.
