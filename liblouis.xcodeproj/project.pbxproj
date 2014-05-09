@@ -1436,6 +1436,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"TABLESDIR=\\\"$SRCROOT/liblouis/tables\\\"",
+					"HAVE_CONFIG_H=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -1448,7 +1450,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"HAVE_CONFIG_H=1",
+					"TABLESDIR=\\\"$SRCROOT/liblouis/tables\\\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
