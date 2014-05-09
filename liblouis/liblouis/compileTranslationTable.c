@@ -2079,13 +2079,13 @@ passGetEmphasis ()
       switch (passLine.chars[passLinepos])
 	{
 	case 'i':
-	  passEmphasis |= italic;
+	  passEmphasis |= italic_lou;
 	  break;
 	case 'b':
-	  passEmphasis |= bold;
+	  passEmphasis |= bold_lou;
 	  break;
 	case 'u':
-	  passEmphasis |= underline;
+	  passEmphasis |= underline_lou;
 	  break;
 	case 'c':
 	  passEmphasis |= computer_braille;

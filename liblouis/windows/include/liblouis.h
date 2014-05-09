@@ -44,14 +44,14 @@ char * EXPORT_CALL lou_getProgramPath (void);
   typedef enum
   {
     plain_text = 0,
-    italic = 1,
-    underline = 2,
-    bold = 4,
+    italic_lou = 1,
+    underline_lou = 2,
+    bold_lou = 4,
     computer_braille = 8
   } typeforms;
-#define comp_emph_1 italic
-#define comp_emph_2 underline
-#define comp_emph_3 bold
+#define comp_emph_1 italic_lou
+#define comp_emph_2 underline_lou
+#define comp_emph_3 bold_lou
 
   typedef enum
   {

@@ -1063,7 +1063,7 @@ backTranslateString ()
 	  continue;
 	  break;
 	case CTO_FirstLetterItalRule:
-	  currentTypeform = italic;
+	  currentTypeform = italic_lou;
 	  src += currentDotslen;
 	  continue;
 	  break;
@@ -1073,7 +1073,7 @@ backTranslateString ()
 	  continue;
 	  break;
 	case CTO_FirstLetterBoldRule:
-	  currentTypeform = bold;
+	  currentTypeform = bold_lou;
 	  src += currentDotslen;
 	  continue;
 	  break;
@@ -1083,7 +1083,7 @@ backTranslateString ()
 	  continue;
 	  break;
 	case CTO_FirstLetterUnderRule:
-	  currentTypeform = underline;
+	  currentTypeform = underline_lou;
 	  src += currentDotslen;
 	  continue;
 	  break;

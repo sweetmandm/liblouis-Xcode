@@ -637,19 +637,19 @@ insertIndicators ()
     return 1;
   switch (typebuf[src] & EMPHASIS)
     {
-    case italic:
+    case italic_lou:
       if ((typeMark & FIRSTWORD))
 	ruleFound = brailleIndicatorDefined (table->firstWordItal);
       else
 	ruleFound = brailleIndicatorDefined (table->lastWordItalBefore);
       break;
-    case bold:
+    case bold_lou:
       if ((typeMark & FIRSTWORD))
 	ruleFound = brailleIndicatorDefined (table->firstWordBold);
       else
 	ruleFound = brailleIndicatorDefined (table->lastWordBoldBefore);
       break;
-    case underline:
+    case underline_lou:
       if ((typeMark & FIRSTWORD))
 	ruleFound = brailleIndicatorDefined (table->firstWordUnder);
       else
@@ -877,15 +877,15 @@ insertBrailleIndicators (int finish)
 	      case plain_text:
 		ok = 0;
 		break;
-	      case italic:
+	      case italic_lou:
 		ok = beginEmphasis (&table->firstWordItal);
 		curType = 0;
 		break;
-	      case bold:
+	      case bold_lou:
 		ok = beginEmphasis (&table->firstWordBold);
 		curType = 0;
 		break;
-	      case underline:
+	      case underline_lou:
 		ok = beginEmphasis (&table->firstWordUnder);
 		curType = 0;
 		break;
@@ -894,29 +894,29 @@ insertBrailleIndicators (int finish)
 		doCompEmph ();
 		curType = 0;
 		break;
-	      case italic + underline:
+	      case italic_lou + underline_lou:
 		ok = beginEmphasis (&table->firstWordUnder);
-		curType -= underline;
+		curType -= underline_lou;
 		break;
-	      case italic + bold:
+	      case italic_lou + bold_lou:
 		ok = beginEmphasis (&table->firstWordBold);
-		curType -= bold;
+		curType -= bold_lou;
 		break;
-	      case italic + computer_braille:
+	      case italic_lou + computer_braille:
 		ok = 0;
 		doCompEmph ();
 		curType -= computer_braille;
 		break;
-	      case underline + bold:
+	      case underline_lou + bold_lou:
 		beginEmphasis (&table->firstWordBold);
-		curType -= bold;
+		curType -= bold_lou;
 		break;
-	      case underline + computer_braille:
+	      case underline_lou + computer_braille:
 		ok = 0;
 		doCompEmph ();
 		curType -= computer_braille;
 		break;
-	      case bold + computer_braille:
+	      case bold_lou + computer_braille:
 		ok = 0;
 		doCompEmph ();
 		curType -= computer_braille;
@@ -941,15 +941,15 @@ insertBrailleIndicators (int finish)
 	      case plain_text:
 		ok = 0;
 		break;
-	      case italic:
+	      case italic_lou:
 		ok = endEmphasis (&table->firstWordItal);
 		prevType = 0;
 		break;
-	      case bold:
+	      case bold_lou:
 		ok = endEmphasis (&table->firstWordBold);
 		prevType = 0;
 		break;
-	      case underline:
+	      case underline_lou:
 		ok = endEmphasis (&table->firstWordUnder);
 		prevType = 0;
 		break;
@@ -957,29 +957,29 @@ insertBrailleIndicators (int finish)
 		ok = 0;
 		prevType = 0;
 		break;
-	      case italic + underline:
+	      case italic_lou + underline_lou:
 		ok = endEmphasis (&table->firstWordUnder);
-		prevType -= underline;
+		prevType -= underline_lou;
 		break;
-	      case italic + bold:
+	      case italic_lou + bold_lou:
 		ok = endEmphasis (&table->firstWordBold);
-		prevType -= bold;
+		prevType -= bold_lou;
 		break;
-	      case italic + computer_braille:
+	      case italic_lou + computer_braille:
 		ok = 1;
 		prevType -= computer_braille;
 		break;
-	      case underline + bold:
+	      case underline_lou + bold_lou:
 		ok = endEmphasis (&table->firstWordBold);
-		prevType -= bold;
+		prevType -= bold_lou;
 		break;
-	      case underline + computer_braille:
+	      case underline_lou + computer_braille:
 		ok = 0;
 		prevType -= computer_braille;
 		break;
-	      case bold + computer_braille:
+	      case bold_lou + computer_braille:
 		ok = endEmphasis (&table->firstWordBold);
-		prevType -= bold;
+		prevType -= bold_lou;
 		break;
 	      default:
 		ok = 0;
