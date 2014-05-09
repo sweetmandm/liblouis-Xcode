@@ -1,22 +1,10 @@
-liblouisincludedir = $(includedir)/liblouis
+SUBDIRS = gnulib liblouis tools tables doc man tests python m4 windows
 
-liblouisinclude_HEADERS = \
-	liblouis.h \
-	louis.h
+ACLOCAL_AMFLAGS = -I m4 -I gnulib/m4
 
-lib_LTLIBRARIES = liblouis.la
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = liblouis.pc
 
-AM_CPPFLAGS = -DTABLESDIR=\""$(datadir)"/liblouis/tables\"
+EXTRA_DIST = liblouis.pc README.windows HACKING \
+        copyright-notice.txt copyright-notice.cmt
 
-liblouis_la_LDFLAGS =	\
-	-version-info $(LIBLOUIS_CURRENT):$(LIBLOUIS_REVISION):$(LIBLOUIS_AGE) -no-undefined \
-	$(LTLIBINTL)
-
-liblouis_la_SOURCES = \
-	lou_backTranslateString.c \
-	compileTranslationTable.c \
-	louis.h	\
-	liblouis.h \
-	lou_translateString.c \
-	transcommon.ci \
-	wrappers.c
